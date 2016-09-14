@@ -4,6 +4,7 @@
 
 NAME='BotBot'
 BASE="/home/mccuem/shared/.local/conda"
+SHARED_BASE='/home/mccuem/shared/.local'
 CWD=`pwd`
 
 function get-canonical-path() {
@@ -95,6 +96,11 @@ function add-conda-to-path()
     echo "export PATH=\$PATH:$BIN_BASE" >> $HOME/.bash_profile
 }
 
+function add-shared-dir-to-path()
+{
+    echo "export PATH=\$PATH:$SHARED_BASE/bin" >> $HOME/.bash_profile
+}
+
 function test-conda-bin-dir-in-path()
 {
     PATH_N=$(separate-path-var)
@@ -117,6 +123,7 @@ function test-conda-bin-dir-in-path()
 function do-everything()
 {
     parse-args $@
+    add-shared-dir-to-path
     test-conda-bin-dir-in-path
 }
 
