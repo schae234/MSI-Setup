@@ -98,7 +98,7 @@ function add-conda-to-path()
 
 function add-shared-dir-to-path()
 {
-    echo "export PATH=\$PATH:$SHARED_BASE/bin" >> $HOME/.bash_profile
+    echo "export PATH=$SHARED_BASE/bin:\$PATH" >> $HOME/.bash_profile
 }
 
 function test-conda-bin-dir-in-path()
