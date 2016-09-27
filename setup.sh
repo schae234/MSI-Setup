@@ -13,7 +13,7 @@ cat << EOF > $HOME/.mccuem_profile
 # Installed $(date)
 export PATH=$CONDA_BASE/bin:\$PATH
 export PATH=$SHARED_BASE/bin:\$PATH
-export LD_LIBRARY_PATH=/home/mccuem/schaefe2/.local/lib:\$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/mccuem/shared/.local/lib:\$LD_LIBRARY_PATH
 
 umask 0027
 
