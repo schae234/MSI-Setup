@@ -11,7 +11,7 @@ PWD="`( cd \"$PWD\" && pwd )`"  # absolutized and normalized
 
 echo "Currently in $PWD"
 
-if [[ $(grep "mccuem_profile" $HOME/.bashrc | wc -l ) != 1 ]]; then
+if [[ $(grep "source $PWD/mccuem_profile" $HOME/.bashrc | wc -l ) != 1 ]]; then
     echo "source $PWD/mccuem_profile" >> $HOME/.bashrc
 fi
 

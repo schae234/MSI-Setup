@@ -4,6 +4,8 @@ cat << EOF
 ------------------------------------------------
 ------- Currently using McCue Lab Profile ------
 ------------------------------------------------
+        For comlete documentation visit:
+     https://github.com/UMNPonyClub/MSI-Setup
 EOF
 
 CONDA_BASE="/home/mccuem/shared/.local/conda"
