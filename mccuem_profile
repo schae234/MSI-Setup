@@ -1,12 +1,5 @@
-
-cat << EOF
-
-------------------------------------------------
-------- Currently using McCue Lab Profile ------
-------------------------------------------------
-        For comlete documentation visit:
-     https://github.com/UMNPonyClub/MSI-Setup
-EOF
+# if not interactive return
+[[ $- == *i* ]] || return
 
 CONDA_BASE="/home/mccuem/shared/.local/conda"
 SHARED_BASE='/home/mccuem/shared/.local'
@@ -35,3 +28,15 @@ function transfer-file-ownership {
     chmod -R g-rw ~/.ssh
     echo "DONE!"
 }
+
+
+cat << EOF >&2
+
+------------------------------------------------
+------- Currently using McCue Lab Profile ------
+------------------------------------------------
+        For comlete documentation visit:
+     https://github.com/UMNPonyClub/MSI-Setup
+EOF
+
+
