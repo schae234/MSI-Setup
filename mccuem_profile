@@ -1,6 +1,9 @@
 # if not interactive return
 [[ $- == *i* ]] || return
 
+# return if this script has already run.
+[[ -z $LAB_PROFILE ]] || return
+
 CONDA_BASE="/home/mccuem/shared/.local/conda"
 SHARED_BASE='/home/mccuem/shared/.local'
 
@@ -39,4 +42,4 @@ cat << EOF >&2
      https://github.com/UMNPonyClub/MSI-Setup
 EOF
 
-
+export LAB_PROFILE=mccuem
