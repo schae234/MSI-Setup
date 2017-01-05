@@ -57,7 +57,7 @@ function get-email-of() {
 }
 
 function freeze {
-    EMAIL=$(get-email-of $USER)
+    EMAIL=$(get-email-of)
 
     if [[ $# -ne 1 ]]
     then
