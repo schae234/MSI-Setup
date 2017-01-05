@@ -49,12 +49,17 @@ function add-my-email() {
 }
 
 function get-email-of() {
-    USER_LINE="$(grep $USER $EMAIL_LIST_PATH)"
+    WHICH_USER=$USER
+    if [[ $# == 1 ]]
+    then
+        WHICH_USER=$1
+    fi
+    USER_LINE="$(grep $WHICH_USER $EMAIL_LIST_PATH)"
     cut -d ' ' -f 2 <<< "$USER_LINE"
 }
 
 function freeze {
-    EMAIL=$(get-email-of $USER)
+    EMAIL=$(get-email-of)
 
     if [[ $# -ne 1 ]]
     then
