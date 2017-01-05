@@ -6,6 +6,7 @@
 
 CONDA_BASE="/home/mccuem/shared/.local/conda"
 SHARED_BASE='/home/mccuem/shared/.local'
+EMAIL_LIST_PATH="$SHARED_BASE/emails.txt"
 
 # McCuelab Shared directives
 export PATH=$CONDA_BASE/bin:$PATH
@@ -32,6 +33,36 @@ function transfer-file-ownership {
     echo "DONE!"
 }
 
+function add-my-email() {
+    USER_EMAIL="$(grep $USER $EMAIL_LIST_FILE)"
+
+    if [[ -z $USER_EMAIL ]]
+    then
+        echo -n "Please supply your email address: "
+        read USER_EMAIL
+        echo "$USER $USER_EMAIL" >> "$EMAIL_LIST_FILE"
+    else
+        echo "Your email is already recorded."
+    fi
+}
+
+function get-email-of() {
+    USER_LINE="$(grep $USER $EMAIL_LIST_FILE)"
+    cut -d ' ' -f 2 <<< "$USER_LINE"
+}
+
+function freeze {
+    EMAIL=$(get-email-of $USER)
+
+    if [[ $# -ne 1 ]]
+    then
+        echo "Wrong number of arguments."
+        echo "USAGE: freeze DIRECTORY"
+        return 1
+    fi
+
+    qsub -F "$1" -M "$EMAIL" -q lab freeze.sh && echo "Job submitted."
+}
 
 cat << EOF >&2
 
