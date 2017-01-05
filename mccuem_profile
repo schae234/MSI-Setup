@@ -1,5 +1,8 @@
 # if not interactive return
 [[ $- == *i* ]] || return
+# MAKE SURE THIS RUNS REGARDLESS!
+umask 027
+
 
 # return if this script has already run.
 [[ -z $LAB_PROFILE ]] || return
@@ -13,7 +16,6 @@ export PATH=$CONDA_BASE/bin:$PATH
 export PATH=$SHARED_BASE/bin:$PATH
 export LD_LIBRARY_PATH=/home/mccuem/shared/.local/lib:$LD_LIBRARY_PATH
 
-umask 0027
 
 alias usage="du -sch .[!.]* * | sort -h"
 
