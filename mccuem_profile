@@ -73,11 +73,11 @@ function freeze {
 
 cat << EOF >&2
 
-------------------------------------------------
-------- Currently using McCue Lab Profile ------
-------------------------------------------------
-        For comlete documentation visit:
-     https://github.com/UMNPonyClub/MSI-Setup
+-------------------------------------------------
+------- Currently using McCue Lab Profile -------
+-------------------------------------------------
+        For comlete documentation, visit:
+     http://github.com/UMNPonyClub/MSI-Setup
 EOF
 
 export LAB_PROFILE=mccuem
