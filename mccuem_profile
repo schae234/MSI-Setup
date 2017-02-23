@@ -76,7 +76,7 @@ cat << EOF >&2
 -------------------------------------------------
 ------- Currently using McCue Lab Profile -------
 -------------------------------------------------
-        For comlete documentation, visit:
+        For complete documentation, visit:
      http://github.com/UMNPonyClub/MSI-Setup
 EOF
 
